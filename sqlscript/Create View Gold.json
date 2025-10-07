@@ -1,0 +1,17 @@
+{
+	"name": "Create View Gold",
+	"properties": {
+		"content": {
+			"query": "\n------------------------\n-- CREATE VIEW CALENDAR\n------------------------\nCREATE VIEW gold.calendar AS\nSELECT *\nFROM OPENROWSET(\n    BULK 'AdventureWorks_Calendar/',\n    DATA_SOURCE = 'source_silver',\n    FORMAT = 'PARQUET'\n) AS quer1;\n\n------------------------\n-- CREATE VIEW CUSTOMERS\n------------------------\n\nCREATE VIEW gold.customers AS\nSELECT *\nFROM OPENROWSET(\n    BULK 'AdventureWorks_Customers/',\n    DATA_SOURCE = 'source_silver',\n    FORMAT = 'PARQUET'\n) AS quer1;\n\n\n------------------------\n-- CREATE VIEW PRODUCTS\n------------------------\n\nCREATE VIEW gold.products AS\nSELECT *\nFROM OPENROWSET(\n    BULK 'AdventureWorks_Products/',\n    DATA_SOURCE = 'source_silver',\n    FORMAT = 'PARQUET'\n) AS quer1;\n\n\n------------------------\n-- CREATE VIEW RETURNS\n------------------------\n\nCREATE VIEW gold.returns AS\nSELECT *\nFROM OPENROWSET(\n    BULK 'AdventureWorks_Returns/',\n    DATA_SOURCE = 'source_silver',\n    FORMAT = 'PARQUET'\n) AS quer1;\n\n\n------------------------\n-- CREATE VIEW SALES\n------------------------\n\nCREATE VIEW gold.sales AS\nSELECT *\nFROM OPENROWSET(\n    BULK 'AdventureWorks_Sales/',\n    DATA_SOURCE = 'source_silver',\n    FORMAT = 'PARQUET'\n) AS quer1;\n\n\n------------------------\n-- CREATE VIEW SUBCAT\n------------------------\n\nCREATE VIEW gold.subcat AS\nSELECT *\nFROM OPENROWSET(\n    BULK 'AdventureWorks_SubCategories/',\n    DATA_SOURCE = 'source_silver',\n    FORMAT = 'PARQUET'\n) AS quer1;\n\n\n------------------------\n-- CREATE VIEW TERRITORIES\n------------------------\n\nCREATE VIEW gold.territories AS\nSELECT *\nFROM OPENROWSET(\n    BULK 'AdventureWorks_Territories/',\n    DATA_SOURCE = 'source_silver',\n    FORMAT = 'PARQUET'\n) AS quer1;\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "awdatabase",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
