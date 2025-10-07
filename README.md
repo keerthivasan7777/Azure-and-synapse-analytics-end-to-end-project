@@ -9,7 +9,7 @@ This project demonstrates a complete data engineering pipeline built on Microsof
 ## 🏗️ Architecture
 
 ### Data Engineering Architecture Diagram
-![Data Engineering Architecture](./images/00-architecture-diagram.png)
+![Data Engineering Architecture](./images/00-architecture-diagram.jpg)
 *End-to-end data engineering architecture showing the flow from Azure Blob Storage through Azure Data Factory, Azure Databricks, Medallion layers, to Azure Synapse Analytics*
 
 ```
