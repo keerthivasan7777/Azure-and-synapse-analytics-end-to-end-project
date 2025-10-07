@@ -1,0 +1,9 @@
+{
+	"name": "adf-aw-project-keerthi",
+	"location": "southindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "32dbcf78-00b4-4cab-ab4d-6d4121972503",
+		"tenantId": "dda06c5f-035d-4e4b-b9e3-6eaecfa27547"
+	}
+}
