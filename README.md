@@ -1,9 +1,16 @@
 # Azure-and-synapse-analytics-end-to-end-project
 ##  Project Overview
+# End-to-End Azure Data Engineering Project
+
+## 🚀 Project Overview
 
 This project demonstrates a complete data engineering pipeline built on Microsoft Azure, implementing a medallion architecture (Bronze, Silver, Gold) for data processing and analytics. The solution ingests raw data from Azure Blob Storage, processes it through Azure Data Factory and Databricks, and delivers insights through Azure Synapse Analytics.
 
 ## 🏗️ Architecture
+
+### Data Engineering Architecture Diagram
+![Data Engineering Architecture](./images/00-architecture-diagram.png)
+*End-to-end data engineering architecture showing the flow from Azure Blob Storage through Azure Data Factory, Azure Databricks, Medallion layers, to Azure Synapse Analytics*
 
 ```
 Azure Blob Storage (Raw Data)
@@ -16,6 +23,36 @@ Azure Blob Storage (Medallion Layers: Bronze/Silver/Gold)
         ↓
 Azure Synapse Analytics (Data Warehouse & Analytics)
 ```
+
+## 📸 Project Screenshots
+
+### 1. Azure Resource Group Overview
+![Azure Resource Group](./images/01-resource-group.png)
+*Overview of all Azure resources in the AWPROJECT resource group including Data Factory, Databricks, Synapse Analytics, and Storage Accounts*
+
+### 2. Azure Blob Storage - Container Structure
+![Azure Blob Storage Containers](./images/02-storage-containers.png)
+*Medallion architecture implementation with Bronze, Silver, Gold, Parameters, and Logs containers*
+
+### 3. Azure Data Factory - Pipeline Design
+![ADF Pipeline](./images/03-adf-pipeline.png)
+*DynamicGitToRaw pipeline with Lookup, ForEach, and Dynamic Copy activities for orchestrated data ingestion*
+
+### 4. Azure Databricks Workspace
+![Databricks Workspace](./images/04-databricks-workspace.png)
+*Databricks workspace (AW_PROJECT) with silver_layer notebook for data transformation*
+
+### 5. Azure Synapse Analytics - Overview
+![Synapse Analytics Overview](./images/05-synapse-overview.png)
+*Synapse workspace with serverless SQL endpoint and development endpoint configuration*
+
+### 6. Synapse Analytics - SQL Script
+![Synapse SQL Scripts](./images/06-synapse-sql-scripts.png)
+*SQL scripts for creating external data sources, credentials, and external tables for Silver and Gold layers*
+
+### 7. Storage Account - Default Synapse Container
+![Default Synapse Storage](./images/07-default-synapse-storage.png)
+*Default storage container for Synapse Analytics workspace*
 
 ## 🛠️ Technologies & Services Used
 
@@ -100,6 +137,28 @@ WITH (
 
 ```
 AWPROJECT/
+├── README.md
+├── images/
+│   ├── 00-architecture-diagram.png
+│   ├── 01-resource-group.png
+│   ├── 02-storage-containers.png
+│   ├── 03-adf-pipeline.png
+│   ├── 04-databricks-workspace.png
+│   ├── 05-synapse-overview.png
+│   ├── 06-synapse-sql-scripts.png
+│   └── 07-default-synapse-storage.png
+├── adf-pipelines/
+│   └── DynamicGitToRaw.json
+├── databricks-notebooks/
+│   └── silver_layer.py
+└── synapse-scripts/
+    ├── create_external_tables.sql
+    └── schema_create.sql
+```
+
+### Azure Resources
+```
+AWPROJECT/
 ├── adf-aw-project-keerthi (Data Factory V2)
 ├── adb-aw-project (Azure Databricks Service)
 ├── awproject--synapse (Synapse workspace)
@@ -169,6 +228,15 @@ AWPROJECT/
 - Business intelligence and reporting
 - Data lake analytics
 
+## 🎓 Learning Outcomes
+
+Through this project, I gained hands-on experience with:
+- Designing end-to-end data pipelines
+- Implementing medallion architecture patterns
+- Azure service integration and orchestration
+- Serverless computing for cost optimization
+- Data governance and security best practices
+
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
@@ -178,10 +246,5 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 **Developer**: Keerthivasan R  
 **Project Location**: Salem, Tamil Nadu, India
 
-## 📝 License
-
-This project is created for educational and demonstration purposes.
-
----
 
 ⭐ If you find this project helpful, please give it a star!
